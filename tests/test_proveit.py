@@ -276,6 +276,21 @@ class ExitCodes(unittest.TestCase):
         rc, _ = self._run("/nonexistent/spec")
         self.assertEqual(rc, 2)
 
+    def test_plain_summary_line_is_printed(self):
+        # criterion: 7.1
+        d = self._project(
+            "import unittest\n\n"
+            "class C(unittest.TestCase):\n"
+            "    def test_a(self):\n        # criterion: 1.1\n        pass\n"
+            "    def test_b(self):\n        # criterion: 1.2\n        pass\n"
+            "    def test_c(self):\n        # criterion: 2.1\n        pass\n")
+        rc, out = self._run(d)
+        first = [l for l in out.splitlines() if l.strip()][0]
+        self.assertRegex(
+            first,
+            r"^criteria \d+ \| proven \d+ \| failed \d+ \| uncovered \d+$")
+        self.assertNotIn("**", first)
+
 
 class HonestFailure(unittest.TestCase):
     def test_parse_error_names_the_offending_criterion(self):

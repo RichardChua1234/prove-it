@@ -87,3 +87,11 @@
 6.4. WHEN a test carries an invalid criterion identifier THEN THE SYSTEM SHALL report this as an annotation error.
 
 6.5. WHEN the system produces a report THEN THE SYSTEM SHALL never include a criterion marked as proven unless a test explicitly claimed it and actually ran successfully.
+
+## 7. Summary Line
+
+**User story:** As a CI author, I want one plain-text summary line so that build logs stay readable without parsing markdown.
+
+**Acceptance criteria:**
+
+7.1. WHEN the check completes THEN THE SYSTEM SHALL print a single plain-text summary line stating the counts of criteria, proven, failed and uncovered.

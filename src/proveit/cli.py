@@ -13,7 +13,7 @@ import argparse
 import os
 import sys
 
-from .report import render_json, render_markdown
+from .report import render_json, render_markdown, summary_line
 from .runner import merge_details, run_suite
 from .spec_parser import parse_spec
 from .trace import compute_verdict, scan_tests
@@ -44,6 +44,7 @@ def check(spec: str, tests: str, command: str, cwd: str = ".",
 
     md = render_markdown(verdict, spec, command)
     js = render_json(verdict, spec, command)
+    print(summary_line(verdict))
     print(md)
 
     if md_out:

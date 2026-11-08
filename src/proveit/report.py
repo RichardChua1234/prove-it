@@ -86,6 +86,12 @@ def render_markdown(verdict, spec_path: str = "", ran: str = "") -> str:
     return "\n".join(lines)
 
 
+def summary_line(verdict) -> str:
+    """One plain-text line for build logs — no markdown to strip."""
+    return (f"criteria {verdict.total_criteria} | proven {verdict.proven_count} | "
+            f"failed {len(verdict.failed)} | uncovered {len(verdict.uncovered)}")
+
+
 def render_json(verdict, spec_path: str = "", ran: str = "") -> str:
     def ev(e):
         return {"test": e.test, "file": e.file, "line": e.line,
