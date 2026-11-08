@@ -1,0 +1,26 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Re-check evidence after a spec or test changes",
+      "description": "A verdict is only true for the revision it was computed on. When the spec or the suite is edited, the report is regenerated so it cannot silently go stale.",
+      "trigger": "PostFileSave",
+      "matcher": "\\.(py|md)$",
+      "action": {
+        "type": "command",
+        "command": "PYTHONPATH=src python3 -m proveit check --spec .kiro/specs/prove-it --tests tests --md-out docs/evidence-report.md --json-out docs/evidence-report.json"
+      },
+      "timeout": 300
+    },
+    {
+      "name": "Write the evidence report when the session stops",
+      "description": "Leaves the verdict on disk at the end of a session, so the last state of the spec is always recorded.",
+      "trigger": "Stop",
+      "action": {
+        "type": "command",
+        "command": "PYTHONPATH=src python3 -m proveit check --spec .kiro/specs/prove-it --tests tests --md-out docs/evidence-report.md --json-out docs/evidence-report.json"
+      },
+      "timeout": 300
+    }
+  ]
+}
