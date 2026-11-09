@@ -2,8 +2,8 @@
   "spec": ".kiro/specs/prove-it",
   "command": "/opt/hermes/.venv/bin/python3 -m unittest discover -s tests -v",
   "summary": {
-    "criteria": 26,
-    "proven": 26,
+    "criteria": 27,
+    "proven": 27,
     "failed": 0,
     "uncovered": 0,
     "ok": true
@@ -216,7 +216,7 @@
       {
         "test": "test_parse_error_names_the_offending_criterion",
         "file": "tests/test_proveit.py",
-        "line": 281,
+        "line": 296,
         "status": "passed",
         "detail": ""
       }
@@ -225,7 +225,7 @@
       {
         "test": "test_missing_test_path_is_a_typed_failure",
         "file": "tests/test_proveit.py",
-        "line": 289,
+        "line": 304,
         "status": "passed",
         "detail": ""
       }
@@ -234,7 +234,7 @@
       {
         "test": "test_failing_command_is_reported_not_invented",
         "file": "tests/test_proveit.py",
-        "line": 296,
+        "line": 311,
         "status": "passed",
         "detail": ""
       }
@@ -243,7 +243,7 @@
       {
         "test": "test_invalid_criterion_identifier_is_an_annotation_error",
         "file": "tests/test_proveit.py",
-        "line": 303,
+        "line": 318,
         "status": "passed",
         "detail": ""
       }
@@ -253,6 +253,15 @@
         "test": "test_claimed_but_never_run_is_not_proven",
         "file": "tests/test_proveit.py",
         "line": 189,
+        "status": "passed",
+        "detail": ""
+      }
+    ],
+    "7.1": [
+      {
+        "test": "test_plain_summary_line_is_printed",
+        "file": "tests/test_proveit.py",
+        "line": 279,
         "status": "passed",
         "detail": ""
       }

@@ -38,7 +38,7 @@ $ python3 -m unittest discover -s tests
 OK                        <- the suite is still happy
 
 $ python3 -m proveit check --spec .kiro/specs/prove-it --tests tests
-**Criteria:** 26   **Proven:** 24   **Failed:** 0   **Uncovered:** 2
+criteria 27 | proven 25 | failed 0 | uncovered 2
 exit 1                    <- the spec is not proven, and it says which
 ```
 
@@ -91,6 +91,31 @@ treating it as a text editor:
 - **Agents** — `.kiro/agents/` holds an optional proposer that drafts test cases
   for uncovered criteria. Proposals are written as reviewable files and never
   applied silently.
+
+## Kiroween 2026 — entered in the Resurrection category
+
+A requirement with no passing test is a **dead claim**. Most codebases are full of
+them: the spec still says the behaviour is required, the suite is green, and
+nothing actually demonstrates that the requirement holds. Nobody notices, because
+a green suite looks like proof.
+
+Prove It resurrects those requirements. It does not assume they work — it demands
+a test that claims each one, runs that test, and names every criterion that has no
+evidence behind it. The `Uncovered` section is, in effect, the graveyard of
+requirements nobody ever proved, and the tool's job is to walk it and report what
+is still dead.
+
+### Disclosure of pre-existing work
+
+Required by the Kiroween rules, and worth stating plainly:
+
+- **All of this code was written during the submission period** (8–9 November
+  2026). No part of it pre-dates 30 October 2026.
+- **No pre-existing code, library or template is incorporated.** There are no
+  third-party dependencies at all — everything is Python's standard library.
+- **The Kiro spec was authored with Kiro CLI**, which is exactly the point: the
+  spec is the input format, and it is also the thing being verified.
+- This project is unrelated to the author's other work and shares no code with it.
 
 ## Licence
 

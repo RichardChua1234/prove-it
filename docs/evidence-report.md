@@ -2,7 +2,7 @@
 
 **Spec:** `.kiro/specs/prove-it`
 **Tests run with:** `/opt/hermes/.venv/bin/python3 -m unittest discover -s tests -v`
-**Criteria:** 26   **Proven:** 26   **Failed:** 0   **Uncovered:** 0
+**Criteria:** 27   **Proven:** 27   **Failed:** 0   **Uncovered:** 0
 
 ## Uncovered — no test claims these (0)
 
@@ -12,7 +12,7 @@
 
 - none
 
-## Proven — claimed and passing (26)
+## Proven — claimed and passing (27)
 
 - [x] **1.1**
     - `test_reads_every_requirements_file` — passed (tests/test_proveit.py:54)
@@ -59,14 +59,16 @@
 - [x] **5.3**
     - `test_exit_two_when_the_check_cannot_run` — passed (tests/test_proveit.py:273)
 - [x] **6.1**
-    - `test_parse_error_names_the_offending_criterion` — passed (tests/test_proveit.py:281)
+    - `test_parse_error_names_the_offending_criterion` — passed (tests/test_proveit.py:296)
 - [x] **6.2**
-    - `test_missing_test_path_is_a_typed_failure` — passed (tests/test_proveit.py:289)
+    - `test_missing_test_path_is_a_typed_failure` — passed (tests/test_proveit.py:304)
 - [x] **6.3**
-    - `test_failing_command_is_reported_not_invented` — passed (tests/test_proveit.py:296)
+    - `test_failing_command_is_reported_not_invented` — passed (tests/test_proveit.py:311)
 - [x] **6.4**
-    - `test_invalid_criterion_identifier_is_an_annotation_error` — passed (tests/test_proveit.py:303)
+    - `test_invalid_criterion_identifier_is_an_annotation_error` — passed (tests/test_proveit.py:318)
 - [x] **6.5**
     - `test_claimed_but_never_run_is_not_proven` — passed (tests/test_proveit.py:189)
+- [x] **7.1**
+    - `test_plain_summary_line_is_printed` — passed (tests/test_proveit.py:279)
 
 **Every criterion is proven by a test that ran.**
